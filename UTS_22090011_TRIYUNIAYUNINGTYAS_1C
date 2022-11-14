@@ -1,0 +1,170 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+
+public class KopiKenanganJiwa {
+
+    static String[] Kopi_Latte_Dont_Be_Latte = new String[400];
+    static String[] Kopi_Goncang_jiwa = new String[300];
+    static String[] Kopi_jalan_kenangan = new String[300];
+    static String[] Kopi_pahit_tanpa_rasa = new String[250];
+
+    static int stok = Kopi_Latte_Dont_Be_Latte.length + Kopi_Goncang_jiwa.length + Kopi_jalan_kenangan.length + Kopi_pahit_tanpa_rasa.length;
+    static int sisa = stok;
+
+    public static void main(String[] args) {
+        System.out.println("=========================\n\t\t Program Pesan Kopi\n=========================");
+        pesan();
+    }
+
+
+    public void PrintDataPesanan() {
+        int total_KopilatteDontBeLatte = 0;
+        for (int index = 0; index < Kopi_Latte_Dont_Be_Latte.length; index++) {
+            if (Kopi_Latte_Dont_Be_Latte[index] != null) {
+                total_KopilatteDontBeLatte++;
+            }
+        }
+
+        int total_KopiGoncangJiwa = 0;
+        for (int index = 0; index < Kopi_Goncang_jiwa.length; index++) {
+            if (Kopi_Goncang_jiwa[index] != null) {
+                total_KopiGoncangJiwa++;
+            }
+        }
+
+        int total_KopiJalanKenangan = 0;
+        for (int index = 0; index < Kopi_jalan_kenangan.length; index++) {
+            if (Kopi_jalan_kenangan[index] != null) {
+                total_KopiJalanKenangan++;
+            }
+        }
+
+        int total_KopiPahitTanpaRasa = 0;
+        for (int index = 0; index < Kopi_pahit_tanpa_rasa.length; index++) {
+            if (Kopi_pahit_tanpa_rasa[index] != null) {
+                total_KopiPahitTanpaRasa++;
+            }
+        }
+
+
+        sisa = stok - total_KopilatteDontBeLatte - total_KopiGoncangJiwa - total_KopiJalanKenangan - total_KopiPahitTanpaRasa;
+        System.out.println("\n=========================================================\n\t\tData Penjualan Kopi\n=========================================================");
+        System.out.println("Don't Be Late\t      : " + total_KopilatteDontBeLatte + " Cup terjual | " + (Kopi_Latte_Dont_Be_Latte.length - total_KopilatteDontBeLatte) + " Cup tersisa");
+        System.out.println("Goncang Jiwa\t      : " + total_KopiGoncangJiwa + " Cup terjual | " + (Kopi_Goncang_jiwa.length - total_KopiGoncangJiwa) + " Cup tersisa");
+        System.out.println("Jalan Kenangan\t      : " + total_KopiJalanKenangan + " Cup terjual | " + (Kopi_jalan_kenangan.length - total_KopiJalanKenangan) + " Cup tersisa");
+        System.out.println("Kopi Pahit Tanpa Rasa : " + total_KopiPahitTanpaRasa + " Cup terjual | " + (Kopi_pahit_tanpa_rasa.length - total_KopiPahitTanpaRasa) + " Cup tersisa");
+
+
+        ArrayList<Integer> penjualan = new ArrayList<Integer>();
+        penjualan.add(total_KopilatteDontBeLatte);
+        penjualan.add(total_KopiGoncangJiwa);
+        penjualan.add(total_KopiJalanKenangan);
+        penjualan.add(total_KopiPahitTanpaRasa);
+
+
+        Collections.sort(penjualan, Collections.reverseOrder());
+
+
+        System.out.println("=========================================================");
+        System.out.println("\t\tKopi paling banyak disukai\n");
+
+        if (total_KopilatteDontBeLatte == penjualan.get(0)) {
+            System.out.println("- Don't Be Late");
+        }
+
+        if (total_KopiGoncangJiwa == penjualan.get(0)) {
+            System.out.println("- Goncang Jiwa");
+        }
+
+        if (total_KopiJalanKenangan == penjualan.get(0)) {
+            System.out.println("- Jalan Kenangan");
+        }
+
+        if (total_KopiPahitTanpaRasa == penjualan.get(0)) {
+            System.out.println("- Pahit Tanpa Rasa");
+        }
+
+        System.out.println("=========================================================");
+        System.out.println("\t\tKopi paling tidak disukai\n");
+
+
+        if (total_KopilatteDontBeLatte == penjualan.get(3)) {
+            System.out.println("- Don't Be Late");
+        }
+
+        if (total_KopiGoncangJiwa == penjualan.get(3)) {
+            System.out.println("- Goncang Jiwa");
+        }
+
+        if (total_KopiJalanKenangan == penjualan.get(3)) {
+            System.out.println("- Jalan Kenangan");
+        }
+
+        if (total_KopiPahitTanpaRasa == penjualan.get(3)) {
+            System.out.println("- Pahit Tanpa Rasa");
+        }
+
+        System.out.println("=========================================================");
+        System.out.println("Total kopi terjual\t\t: " + (total_KopilatteDontBeLatte + total_KopiGoncangJiwa + total_KopiJalanKenangan + total_KopiPahitTanpaRasa) + " Cup");
+        System.out.println("Total sisa kopi\t\t\t: " + sisa + " Cup");
+        System.out.println("=========================================================");
+    }
+        public static void CheckDataPesanan(String[] jenis, String pembeli) {
+            for (int index = 0; index < jenis.length; index++) {
+                if (jenis[index] != null) {
+
+                    if (jenis[index] == null) {
+                        jenis[index] = pembeli;
+                    }
+                }
+            }
+            public static void DataPesanan ( int jenis, String nama){
+                System.out.println(nama + "memesan kopi");
+                switch (jenis) {
+                    case 1:
+                        DataPesanan(Kopi_Latte_Dont_Be_Latte, nama);
+                        System.out.println("Kopi Latte Don't Be Latte");
+                        break;
+                    case 2:
+                        DataPesanan(Kopi_Goncang_jiwa, nama);
+                        System.out.println("Kopi Goncang jiwa");
+                        break;
+                    case 3:
+                        DataPesanan(Kopi_jalan_kenangan, nama);
+                        System.out.println("Kopi Jalan Kenangan");
+                        break;
+                    case 4:
+                        DataPesanan(Kopi_pahit_tanpa_rasa, nama);
+                        System.out.println("Kopi Pahit Tanpa Rasa");
+                        break;
+                }
+                PrintDataPesanan();
+            }
+            public static void pesan() {
+                try (Scanner pembeli = new Scanner(System.in)) {
+                    while (true) {
+
+                        System.out.print("\nnama pembeli : ");
+                        String nama_pemebeli = pembeli.nextLine();
+
+                        if (nama_pemebeli.isBlank()) {
+                            System.out.println("nama pembeli wajib diisi");
+                            pesan();
+                        } else if (sisa == 0) {
+                            System.out.println("Maaf semua kopi sudah habis");
+                            pesan();
+                        } else {
+                            Random gacha = new Random();
+
+                            int jenisrandom = gacha.nextInt(4) + 1;
+
+                            DataPesanan(jenisrandom, nama_pemebeli);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
