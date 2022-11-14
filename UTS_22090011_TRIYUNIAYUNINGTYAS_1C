@@ -13,12 +13,7 @@ public class KopiKenanganJiwa {
     static int stok = Kopi_Latte_Dont_Be_Latte.length + Kopi_Goncang_jiwa.length + Kopi_jalan_kenangan.length + Kopi_pahit_tanpa_rasa.length;
     static int sisa = stok;
 
-    public static void main(String[] args) {
-        System.out.println("=========================\n\t\t Program Pesan Kopi\n=========================");
-        pesan();
-    }
-
-
+   
     public void PrintDataPesanan() {
         int total_KopilatteDontBeLatte = 0;
         for (int index = 0; index < Kopi_Latte_Dont_Be_Latte.length; index++) {
@@ -70,20 +65,20 @@ public class KopiKenanganJiwa {
         System.out.println("=========================================================");
         System.out.println("\t\tKopi paling banyak disukai\n");
 
-        if (total_KopilatteDontBeLatte == penjualan.get(0)) {
-            System.out.println("- Don't Be Late");
+        if (total_KopilatteDontBeLatte == penjualan.get(3)) {
+            System.out.println("- kopi latte dont be latte");
         }
 
         if (total_KopiGoncangJiwa == penjualan.get(0)) {
-            System.out.println("- Goncang Jiwa");
+            System.out.println("- kopi Goncang Jiwa");
         }
 
         if (total_KopiJalanKenangan == penjualan.get(0)) {
-            System.out.println("- Jalan Kenangan");
+            System.out.println("- kopi Jalan Kenangan");
         }
 
         if (total_KopiPahitTanpaRasa == penjualan.get(0)) {
-            System.out.println("- Pahit Tanpa Rasa");
+            System.out.println("- kopi Pahit Tanpa Rasa");
         }
 
         System.out.println("=========================================================");
@@ -91,19 +86,19 @@ public class KopiKenanganJiwa {
 
 
         if (total_KopilatteDontBeLatte == penjualan.get(3)) {
-            System.out.println("- Don't Be Late");
+            System.out.println("- kopi latte don't Be Latte");
         }
 
         if (total_KopiGoncangJiwa == penjualan.get(3)) {
-            System.out.println("- Goncang Jiwa");
+            System.out.println("- kopi Goncang Jiwa");
         }
 
         if (total_KopiJalanKenangan == penjualan.get(3)) {
-            System.out.println("- Jalan Kenangan");
+            System.out.println("- kopi Jalan Kenangan");
         }
 
         if (total_KopiPahitTanpaRasa == penjualan.get(3)) {
-            System.out.println("- Pahit Tanpa Rasa");
+            System.out.println("- kopi Pahit Tanpa Rasa");
         }
 
         System.out.println("=========================================================");
@@ -166,5 +161,9 @@ public class KopiKenanganJiwa {
                 }
 
             }
+            public static void main(String[] args) {
+        System.out.println("=========================\n\t\t Program Pesan Kopi\n=========================");
+        pesan();
+    }
         }
     }
